@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Fraud Detection</title>
+    <style>
+        button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: blue;
+        }
+        textarea {
+            width: 500px;
+            height: 150px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Credit Card Fraud Detection</h2>
+
+<form action="/predict" method="POST">
+    <label>Enter feature values separated by commas:</label><br>
+    <textarea name="features" rows="2"></textarea>
+    <br>
+    <button type="Submit" value="Send">Predict</button>
+</form> 
+
+{% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+{% endif %}
+
+<p>You will be redirected once your prediction is made.</p>
+
+<p>Time to generate prediction depends on length of input.</p>
+
+</body>
+</html>
